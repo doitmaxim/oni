@@ -1,25 +1,29 @@
 <template>
     <div class="projects__all">
-        <link-box
-            v-for="i in Array(this.count)" 
-            :key="i"
+        <project-item
+            v-for="project in allProjects" 
+            v-bind:key="project.id"
+            :project="project"
         />
     </div>
 </template>
 
 
 <script>
-import linkBox from '../../components/link-box.vue';
+import {mapActions, mapGetters} from 'vuex';
+import projectItem from '../../components/project/project__item.vue';
 export default {
     name: 'projects__all',
-    data() {
-        return {
-            title: 'проекты',
-            count: 10
-        }
-    },
+    computed: mapGetters(['allProjects']),
+    methods: mapActions(['getAllProjects']),
     components: {
-        linkBox
+        projectItem
+    },
+    async mounted() {
+        this.getAllProjects(10);
+    },
+    props: {
+
     }
 }
 </script>

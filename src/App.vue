@@ -64,16 +64,7 @@
       text-decoration: none;
     }
     .nav__item.active {
-      position: relative;
-    }
-    .nav__item.active::after {
-      content: '';
-      width: 100px;
-      height: 1px;
-      background-color: #F1F2F2;
-      position: absolute;
-      top: 50%;
-      left: 110%;
+      font-weight: bold;
     }
   }
   .content {

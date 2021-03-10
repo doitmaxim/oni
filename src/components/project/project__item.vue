@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    name: 'linkBox',
+    name: 'projectItem',
     props: {
         project: {
             type: Object,
